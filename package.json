@@ -1,0 +1,89 @@
+{
+  "name": "@cas-ia/orbital-elements",
+  "version": "0.1.0",
+  "description": "Sistema de marca y catálogo de componentes para interfaces generadas por agentes (Orbital). De un color primario sale el tema completo (claro y oscuro); el agente compone la UI con un catálogo validado.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "exports": {
+    "./brand": {
+      "types": "./dist/brand/index.d.ts",
+      "import": "./dist/brand/index.js"
+    },
+    "./catalog": {
+      "types": "./dist/catalog/index.d.ts",
+      "import": "./dist/catalog/index.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js"
+    },
+    "./json-render": {
+      "types": "./dist/json-render/index.d.ts",
+      "import": "./dist/json-render/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json",
+    "./tools": {
+      "types": "./dist/tools/index.d.ts",
+      "import": "./dist/tools/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup && node scripts/copy-css.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "gallery": "node --import tsx scripts/gallery.tsx",
+    "verify": "npm run typecheck && npm run test && npm run build"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CAS-IA/orbital-elements.git"
+  },
+  "peerDependencies": {
+    "@json-render/core": ">=0.21",
+    "@json-render/react": ">=0.21",
+    "react": ">=18.2"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "@json-render/core": {
+      "optional": true
+    },
+    "@json-render/react": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "culori": "^4.0.2",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@json-render/core": "^0.21.0",
+    "@json-render/react": "^0.21.0",
+    "@types/culori": "^4.0.1",
+    "@types/jsdom": "^30.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "jsdom": "^29.1.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.3"
+  }
+}
