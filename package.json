@@ -40,7 +40,7 @@
     "build": "tsup && node scripts/copy-css.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "gallery": "node --import tsx scripts/gallery.tsx",
+    "gallery": "node scripts/build-gallery.mjs borrador/gallery.html",
     "verify": "npm run typecheck && npm run test && npm run build"
   },
   "publishConfig": {
