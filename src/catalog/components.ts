@@ -6,9 +6,9 @@
  * React), su categoría, para qué sirve y cuándo usarlo. El agente no puede
  * inventar tipos ni props: lo que no valida, no se pinta.
  *
- * Inventario: las 21 secciones de `render_ui` (faro-orbital-tools) + lo que
- * faltaba según el catálogo de `orbital-documents` (diagramas de flujo,
- * línea de tiempo, heatmap, ranking, gauge, comparativa, cita, código…).
+ * Inventario: las secciones de la tool `render_ui` original + lo que faltaba
+ * para informes y paneles (diagramas de flujo, línea de tiempo, heatmap,
+ * ranking, gauge, comparativa, cita, código…).
  */
 import { z } from 'zod';
 

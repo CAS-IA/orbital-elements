@@ -1,4 +1,4 @@
-/* Origen: faro-orbital-widget/client/src/services/partial-json.ts (en producción). */
+/* Parser probado en producción en el widget de chat Orbital. */
 /**
  * Parser JSON tolerante para resultados estructurados que llegan por stream.
  *

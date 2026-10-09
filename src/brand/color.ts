@@ -2,10 +2,9 @@
  * Núcleo de color en OKLCH (perceptual): parseo seguro, escalas 50–950,
  * variaciones de tono y ajuste por contraste WCAG.
  *
- * Origen: `orbital-documents/src/v2/componentes/color/escala.ts` (escala y
- * variar) y `qratia-portal-partner/src/lib/marca/tema.ts` (ajuste de la
- * luminosidad hasta cumplir contraste contra varias superficies). Se unifican
- * aquí para que backend y frontales calculen con la MISMA fórmula.
+ * Une dos técnicas: la escala perceptual por pasos (curva tipo Tailwind v4)
+ * y el ajuste de la luminosidad hasta cumplir contraste contra varias
+ * superficies, para que backend y frontales calculen con la MISMA fórmula.
  *
  * Todo es puro y sin E/S. La salida es siempre un hex `#rrggbb` normalizado:
  * un valor de entrada nunca llega crudo a CSS, SVG ni OOXML.

@@ -1,8 +1,7 @@
 /**
  * Tema completo a partir de UN color primario.
  *
- * Lenguaje visual: el sistema de Qratia (`qratia-ui/src/theme.css` +
- * `DESIGN.md`), generalizado a cualquier marca:
+ * Lenguaje visual: el sistema de diseño de Qratia, generalizado a cualquier marca:
  *  - Tres niveles de superficie (lienzo → tarjeta → incrustado) que se
  *    distinguen por su color, no por el borde. El lienzo NO es blanco puro.
  *  - El color de marca se usa con su PAPEL: acción sólida, tinte de

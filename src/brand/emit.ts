@@ -6,7 +6,7 @@
  *  - `shadcnCss`   → nombres shadcn (`--background`, `--primary`, `--chart-1`…)
  *    más los de Qratia (`--incrustado`, `--enlace`, `--estado-*`).
  *  - `tailwindTheme` → bloque `@theme inline` de Tailwind v4.
- *  - `widgetVariables` → las `--widget-*` del widget Orbital.
+ *  - `widgetVariables` → variables `--widget-*` (widget de chat Orbital).
  *  - `designTokens` → JSON en formato W3C Design Tokens (DTCG).
  *
  * Todos los valores salen de `createTheme` (hex normalizados o números), así
@@ -207,7 +207,7 @@ export function tailwindTheme(theme: Theme, opts: EmitOptions & { namespace?: st
   return `@theme inline {\n${lines.join('\n')}\n}\n`;
 }
 
-/** Variables `--widget-*` del widget Orbital (sustituyen a `adjustBrightness`). */
+/** Variables `--widget-*` del widget de chat Orbital. */
 export function widgetVariables(theme: Theme, mode: Mode): Record<string, string> {
   const r = theme[mode];
   const sh = shadows(r, mode);

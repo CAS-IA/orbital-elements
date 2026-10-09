@@ -8,7 +8,7 @@ Sistema de **marca** y **catálogo de componentes** para interfaces que construy
 - **El agente compone, el sistema diseña.** El agente emite un árbol JSON con componentes de un
   catálogo cerrado (Zod). Lo que no valida no se pinta, y los errores vuelven al agente con su ruta para
   que corrija. Nunca código, nunca CSS del modelo.
-- **Lenguaje visual Qratia** (`qratia-ui/DESIGN.md`): tres niveles de superficie, sombras en capas
+- **Lenguaje visual de Qratia**: tres niveles de superficie, sombras en capas
   tintadas, jerarquía por tamaño y peso, cifras tabulares, estados con texto.
 - **Un solo paquete**, varias entradas: cada app carga solo lo que usa.
 
@@ -36,7 +36,7 @@ const theme = createTheme({
 themeCss(theme);              // :root { --oe-* } + .dark { --oe-* }
 shadcnCss(theme);             // --background, --primary, --chart-1… + --incrustado, --enlace, --estado-*
 tailwindTheme(theme);         // @theme inline { --color-oe-card: var(--oe-card); … }
-widgetVariables(theme, 'dark'); // --widget-* del widget Orbital
+widgetVariables(theme, 'dark'); // --widget-* (widget de chat Orbital)
 theme.warnings;               // ajustes hechos para cumplir contraste (para enseñarlos en el panel)
 ```
 
@@ -65,7 +65,7 @@ donut, pie) Sparkline Heatmap · Flow Timeline Steps · Alert EmptyState · Medi
 Confirmation Approval Product`.
 
 La spec admite el formato **anidado** (el que mejor genera un LLM) y el **plano** de json-render
-(`{ root, elements }`). `fromRenderUi` convierte el `render_ui` actual de faro-orbital-tools, así que lo que
+(`{ root, elements }`). `fromRenderUi` convierte el formato de secciones de la tool `render_ui` anterior, así que lo que
 ya generan los agentes se pinta con el diseño nuevo sin tocar nada.
 
 ## Las dos tools del agente
@@ -106,12 +106,19 @@ npm run verify     # typecheck + tests (contraste, catálogo, React, json-render
 npm run gallery    # genera la galería visual en borrador/gallery.html
 ```
 
-## Publicación
+## Instalación
 
-Configurado para GitHub Packages (`publishConfig` → `npm.pkg.github.com`, scope `@cas-ia`). Para
-instalarlo en otra app, su `.npmrc` necesita:
+```bash
+npm i @cas-ia/orbital-elements
+# React y json-render son opcionales (peer dependencies): instálalos solo si usas /react o /json-render.
+```
 
-```
-@cas-ia:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-```
+## Publicar una versión
+
+Sube la versión en `package.json`, añade su entrada al CHANGELOG, haz commit en `main` y sube la etiqueta
+`vX.Y.Z`. El workflow `Publish` verifica (typecheck, tests y build) y publica en npmjs.com con *provenance*
+usando el secreto `NPM_TOKEN` del repo.
+
+## Licencia
+
+MIT © Fractalia Systems

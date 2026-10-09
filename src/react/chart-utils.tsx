@@ -1,7 +1,7 @@
 /**
  * Utilidades compartidas de gráficos.
  *
- * Regla de oro (issue #17 del widget): un SVG con texto se dibuja al ancho
+ * Regla de oro: un SVG con texto se dibuja al ancho
  * REAL de su contenedor — el viewBox coincide con los píxeles —, así ni el
  * texto ni las barras se estiran nunca. Solo el sparkline (sin texto) se
  * estira, y su trazo no se deforma (`vector-effect: non-scaling-stroke`).

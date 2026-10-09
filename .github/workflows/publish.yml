@@ -1,12 +1,13 @@
-# Publica en GitHub Packages al subir una etiqueta vX.Y.Z (con el GITHUB_TOKEN del repo,
-# sin tokens personales). La etiqueta debe coincidir con la versión de package.json.
+# Publica en npmjs.com (público, con provenance) al subir una etiqueta vX.Y.Z.
+# Requiere el secreto NPM_TOKEN (npmjs.com → Access Tokens → Granular, permiso de escritura en @cas-ia).
+# La etiqueta debe coincidir con la versión de package.json.
 name: Publish
 on:
   push:
     tags: ['v*']
 permissions:
   contents: read
-  packages: write
+  id-token: write
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -16,12 +17,11 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          registry-url: https://npm.pkg.github.com
-          scope: '@cas-ia'
+          registry-url: https://registry.npmjs.org
       - name: La etiqueta coincide con package.json
         run: test "v$(node -p "require('./package.json').version")" = "${GITHUB_REF_NAME}"
       - run: npm ci
       - run: npm run verify
-      - run: npm publish
+      - run: npm publish --provenance --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

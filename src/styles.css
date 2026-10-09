@@ -1,7 +1,7 @@
 /*
  * Orbital Elements — hoja de estilos.
  *
- * Lenguaje visual: sistema Qratia (qratia-ui/DESIGN.md), generalizado.
+ * Lenguaje visual: sistema de diseño de Qratia, generalizado.
  *  - Nunca un color fijo: todo sale de las variables --oe-* que emite
  *    `createTheme` (OrbitalTheme las pone en .oe-root). Funciona igual dentro
  *    de un Shadow DOM.

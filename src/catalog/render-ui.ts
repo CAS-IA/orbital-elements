@@ -1,7 +1,7 @@
 /**
  * Compatibilidad: convierte el input de la tool `render_ui` actual
- * (`{ title?, sections[] }`, contrato en faro-orbital-tools
- * `src/a2ui/sections/schema.ts`) a una spec de Orbital Elements.
+ * (`{ title?, sections[] }`, el formato de secciones anterior) a una spec de
+ * Orbital Elements.
  *
  * Así lo que ya generan los agentes de hoy se pinta con el diseño nuevo sin
  * tocar las tools, y la migración puede hacerse sin prisa.

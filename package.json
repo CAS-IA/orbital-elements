@@ -1,16 +1,39 @@
 {
   "name": "@cas-ia/orbital-elements",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Sistema de marca y catálogo de componentes para interfaces generadas por agentes (Orbital). De un color primario sale el tema completo (claro y oscuro); el agente compone la UI con un catálogo validado.",
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "theme",
+    "oklch",
+    "wcag",
+    "generative-ui",
+    "ai-agents",
+    "llm",
+    "react",
+    "zod",
+    "json-render",
+    "components"
+  ],
+  "homepage": "https://github.com/CAS-IA/orbital-elements#readme",
+  "bugs": {
+    "url": "https://github.com/CAS-IA/orbital-elements/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CAS-IA/orbital-elements.git"
+  },
+  "license": "MIT",
   "type": "module",
-  "license": "UNLICENSED",
   "sideEffects": [
     "*.css"
   ],
   "files": [
     "dist",
     "README.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "LICENSE"
   ],
   "exports": {
     "./brand": {
@@ -44,12 +67,9 @@
     "verify": "npm run typecheck && npm run test && npm run build"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "restricted"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CAS-IA/orbital-elements.git"
+    "registry": "https://registry.npmjs.org",
+    "access": "public",
+    "provenance": true
   },
   "peerDependencies": {
     "@json-render/core": ">=0.21",
